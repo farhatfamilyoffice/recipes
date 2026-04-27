@@ -577,7 +577,7 @@
     <h2>Submit a Recipe</h2>
     <p class="sub">Have a family recipe to add to the collection? Share it here and we'll add it to the site.</p>
 
-    <form class="submit-form" name="submit-recipe" method="POST" netlify netlify-honeypot="bot-field">
+    <form class="submit-form" name="submit-recipe" method="POST" netlify netlify-honeypot="bot-field" enctype="multipart/form-data">
       <input type="hidden" name="form-name" value="submit-recipe" />
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
@@ -603,6 +603,10 @@
 
       <label for="notes">Notes &amp; Tips (optional)</label>
       <textarea id="notes" name="notes" placeholder="Family secrets, serving suggestions, storage tips…" style="min-height:80px;"></textarea>
+
+      <label for="photos">Photos (optional)</label>
+      <input type="file" id="photos" name="photos" accept="image/*,.pdf" multiple style="padding:.6rem 1rem;cursor:pointer;" />
+      <p style="font-size:.78rem;color:#999;margin-top:.3rem;">You can select multiple photos. JPG, PNG, or PDF accepted.</p>
 
       <button type="submit">Submit Recipe →</button>
     </form>
