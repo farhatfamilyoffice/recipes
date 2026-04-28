@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 /* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,7 +12,9 @@
   --gold:     #D4A017;
   --green:    #4A7C59;
   --shadow:   rgba(44,24,16,.12);
-  --serif:    'Playfair Display', Georgia, serif;
+  --font:     'Manrope', system-ui, sans-serif;
+  /* kept for any inline references */
+  --serif:    'Manrope', system-ui, sans-serif;
   --sans:     'Manrope', system-ui, sans-serif;
 }
 
@@ -21,8 +23,9 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--cream);
   color: var(--brown);
-  font-family: var(--sans);
+  font-family: var(--font);
   font-size: 17px;
+  font-weight: 400;
   line-height: 1.7;
 }
 
@@ -41,9 +44,10 @@ nav {
 }
 
 nav .brand {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  font-style: italic;
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
   color: var(--gold);
   text-decoration: none;
   flex: 1;
@@ -53,8 +57,9 @@ nav .brand {
 nav a {
   color: #e8d8c0;
   text-decoration: none;
-  font-size: .85rem;
-  letter-spacing: .04em;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .07em;
   text-transform: uppercase;
   transition: color .2s;
 }
@@ -75,20 +80,23 @@ nav a:hover { color: var(--gold); }
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 700;
-  letter-spacing: .02em;
+  font-family: var(--font);
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.1;
   position: relative;
 }
-.hero h1 span { color: var(--gold); font-style: italic; }
+.hero h1 span { color: var(--gold); font-weight: 300; letter-spacing: -.01em; }
 .hero p {
   margin-top: 1rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 400;
   color: #c8b8a0;
   max-width: 520px;
   margin-inline: auto;
   position: relative;
+  line-height: 1.7;
 }
 .hero .divider {
   margin: 1.5rem auto;
@@ -102,20 +110,22 @@ nav a:hover { color: var(--gold); }
 .section-label {
   text-align: center;
   padding: 3rem 1rem 1.5rem;
-  font-family: var(--serif);
-  font-size: 1.6rem;
+  font-family: var(--font);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
   color: var(--mid);
 }
 .section-label span {
   display: block;
-  font-size: .8rem;
-  font-family: var(--sans);
-  letter-spacing: .1em;
+  font-size: .72rem;
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--terra);
   font-style: normal;
-  font-weight: 700;
-  margin-bottom: .3rem;
+  margin-bottom: .4rem;
 }
 
 .grid {
@@ -160,21 +170,24 @@ nav a:hover { color: var(--gold); }
 }
 .card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
 .card-category {
-  font-size: .72rem;
-  letter-spacing: .1em;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--terra);
-  font-weight: 700;
   margin-bottom: .4rem;
 }
 .card-title {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  line-height: 1.3;
+  font-family: var(--font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.2;
   margin-bottom: .6rem;
 }
 .card-meta {
-  font-size: .82rem;
+  font-size: .8rem;
+  font-weight: 400;
   color: #888;
   display: flex;
   gap: 1rem;
@@ -192,21 +205,25 @@ nav a:hover { color: var(--gold); }
   text-align: center;
 }
 .recipe-hero .crumb {
-  font-size: .8rem;
+  font-size: .78rem;
+  font-weight: 500;
   color: #a08060;
   margin-bottom: 1rem;
 }
 .recipe-hero .crumb a { color: var(--gold); text-decoration: none; }
 .recipe-hero .crumb a:hover { text-decoration: underline; }
 .recipe-hero h1 {
-  font-family: var(--serif);
+  font-family: var(--font);
   font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.1;
 }
 .recipe-hero .tagline {
   color: #c8b8a0;
-  margin-top: .5rem;
-  font-style: italic;
+  font-weight: 300;
+  margin-top: .6rem;
+  font-size: 1rem;
 }
 .recipe-hero .meta-bar {
   display: flex;
@@ -214,9 +231,9 @@ nav a:hover { color: var(--gold); }
   gap: 2rem;
   flex-wrap: wrap;
   margin-top: 1.5rem;
-  font-size: .9rem;
+  font-size: .88rem;
 }
-.recipe-hero .meta-bar dt { color: var(--gold); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; }
+.recipe-hero .meta-bar dt { color: var(--gold); font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
 .recipe-hero .meta-bar dd { color: #e8d8c0; font-weight: 700; }
 
 .recipe-body {
@@ -234,19 +251,24 @@ nav a:hover { color: var(--gold); }
 
 /* ── Ingredients ── */
 .ingredients-col h2, .directions-col h2 {
-  font-family: var(--serif);
-  font-size: 1.3rem;
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
   color: var(--mid);
   border-bottom: 2px solid var(--tan);
   padding-bottom: .5rem;
   margin-bottom: 1.2rem;
 }
 .ingredients-col h3 {
-  font-family: var(--serif);
-  font-size: 1rem;
+  font-family: var(--font);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: var(--terra);
   margin: 1.2rem 0 .5rem;
-  font-style: italic;
 }
 .ingredients-col ul {
   list-style: none;
@@ -256,6 +278,7 @@ nav a:hover { color: var(--gold); }
   padding: .35rem 0 .35rem 1.4rem;
   position: relative;
   font-size: .95rem;
+  font-weight: 400;
   border-bottom: 1px solid #f0e8d8;
   line-height: 1.5;
 }
@@ -281,6 +304,8 @@ nav a:hover { color: var(--gold); }
   position: relative;
   padding-left: 2.8rem;
   font-size: .97rem;
+  font-weight: 400;
+  line-height: 1.65;
 }
 .directions-col ol li::before {
   content: counter(steps);
@@ -295,7 +320,7 @@ nav a:hover { color: var(--gold); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 700;
 }
 
@@ -305,21 +330,22 @@ nav a:hover { color: var(--gold); }
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.2rem;
   margin-top: 1.5rem;
-  font-size: .92rem;
+  font-size: .9rem;
+  font-weight: 400;
   line-height: 1.6;
 }
-.tip-box strong { color: var(--mid); }
+.tip-box strong { color: var(--mid); font-weight: 700; }
 
 /* ── Original photo ── */
-.original-photo {
-  margin-top: 2rem;
-}
+.original-photo { margin-top: 2rem; }
 .original-photo h3 {
-  font-family: var(--serif);
-  font-size: 1rem;
+  font-family: var(--font);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: var(--mid);
   margin-bottom: .6rem;
-  font-style: italic;
 }
 .original-photo img {
   width: 100%;
@@ -330,7 +356,8 @@ nav a:hover { color: var(--gold); }
 }
 .original-photo img:hover { opacity: .9; }
 .original-photo figcaption {
-  font-size: .78rem;
+  font-size: .75rem;
+  font-weight: 400;
   color: #999;
   margin-top: .4rem;
   text-align: center;
@@ -353,6 +380,7 @@ nav a:hover { color: var(--gold); }
   top: 1rem; right: 1.5rem;
   color: #fff;
   font-size: 2rem;
+  font-weight: 300;
   cursor: pointer;
   background: none;
   border: none;
@@ -365,7 +393,7 @@ nav a:hover { color: var(--gold); }
   padding: 2rem;
   text-align: center;
 }
-.recipe-nav p { color: var(--mid); font-size: .85rem; margin-bottom: 1rem; font-style: italic; }
+.recipe-nav p { color: var(--mid); font-size: .82rem; font-weight: 400; margin-bottom: 1rem; }
 .recipe-nav .links { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
 .recipe-nav .links a {
   background: var(--brown);
@@ -373,7 +401,10 @@ nav a:hover { color: var(--gold); }
   padding: .5rem 1.1rem;
   border-radius: 100px;
   text-decoration: none;
-  font-size: .82rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
   transition: background .2s;
 }
 .recipe-nav .links a:hover { background: var(--terra); }
@@ -385,10 +416,11 @@ footer {
   color: #a08060;
   text-align: center;
   padding: 2rem;
-  font-size: .82rem;
+  font-size: .8rem;
+  font-weight: 400;
   line-height: 1.8;
 }
-footer span { color: var(--gold); }
+footer span { color: var(--gold); font-weight: 600; }
 
 /* ── Print ── */
 @media print {
