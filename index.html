@@ -117,37 +117,43 @@
       font-weight: 600;
     }
 
-    /* ── Jump cards ── */
-    .jump-grid {
+    /* ── Chapters grid ── */
+    .chapters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      max-width: 960px;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: .7rem;
+      max-width: 1000px;
       margin: 0 auto 3rem;
       padding: 0 2rem;
     }
-    .jump-card {
-      background: var(--brown);
-      color: var(--cream);
-      border-radius: 10px;
-      padding: 1.1rem 1.3rem;
+    .chapter-card {
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .02em;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: .9rem;
       transition: background .2s, transform .15s;
+      display: block;
     }
-    .jump-card:hover { background: var(--terra); transform: translateY(-2px); }
-    .jump-card .jc-img {
-      width: 48px;
-      height: 48px;
-      border-radius: 6px;
-      object-fit: cover;
-      object-position: top;
-      flex-shrink: 0;
+    .chapter-card.active {
+      background: var(--brown);
+      color: var(--gold);
     }
-    .jump-card .jc-title { font-size: 1rem; line-height: 1.3; }
-    .jump-card .jc-cat { font-size: .7rem; color: var(--gold); text-transform: uppercase; letter-spacing: .07em; margin-top: .2rem; }
+    .chapter-card.active:hover { background: var(--terra); color: var(--cream); transform: translateY(-2px); }
+    .chapter-card.locked {
+      background: var(--tan);
+      color: #aaa;
+      cursor: default;
+      pointer-events: none;
+    }
+    .chapter-card .ch-count {
+      display: block;
+      font-size: .68rem;
+      font-weight: 400;
+      margin-top: .15rem;
+      opacity: .7;
+    }
 
     /* ── Submit form ── */
     .submit-section {
@@ -230,11 +236,9 @@
 <body>
 
 <nav>
-  <a href="#top" class="brand">Leo &amp; Virginia Farhat Family Recipes</a>
-  <a href="#cabbage-rolls">Cabbage Rolls</a>
-  <a href="#hashwa">Hashwa</a>
-  <a href="#lebanese-rice">Lebanese Rice</a>
-  <a href="#batlawa">Batlawa</a>
+  <a href="#top" class="brand">The Ida Rose Collection</a>
+  <a href="#chapters">Cookbook</a>
+  <a href="#syrian-lebanese">Syrian-Lebanese</a>
   <a href="#submit">Submit a Recipe</a>
 </nav>
 
@@ -260,29 +264,48 @@
   </div>
 </section>
 
-<!-- ── Jump Links ── -->
-<div class="section-label">
-  <span>The Collection</span>
-  Family Recipes
+<!-- ── Cookbook Chapters ── -->
+<div class="section-label" id="chapters">
+  <span>The Cookbook</span>
+  All Sections
 </div>
 
-<div class="jump-grid">
-  <a href="#cabbage-rolls" class="jump-card">
-    <img class="jc-img" src="images/cabbage-rolls-original.jpg" alt="Cabbage Rolls" />
-    <div><div class="jc-title">Cabbage Rolls</div></div>
-  </a>
-  <a href="#hashwa" class="jump-card">
-    <img class="jc-img" src="images/hashwa-original.jpg" alt="Hashwa" style="object-position:top left;" />
-    <div><div class="jc-title">Hashwa</div></div>
-  </a>
-  <a href="#lebanese-rice" class="jump-card">
-    <img class="jc-img" src="images/lebanese-rice-original.jpg" alt="Lebanese Rice" />
-    <div><div class="jc-title">Lebanese Rice</div></div>
-  </a>
-  <a href="#batlawa" class="jump-card">
-    <img class="jc-img" src="images/batlawa-original.jpg" alt="Batlawa" />
-    <div><div class="jc-title">Batlawa</div></div>
-  </a>
+<div class="chapters-grid">
+  <span class="chapter-card locked">Appetizers</span>
+  <span class="chapter-card locked">Barbecues</span>
+  <span class="chapter-card locked">Breads &amp; Pastries</span>
+  <span class="chapter-card locked">Cake</span>
+  <span class="chapter-card locked">Candies</span>
+  <span class="chapter-card locked">Casseroles</span>
+  <span class="chapter-card locked">Cheese</span>
+  <span class="chapter-card locked">Cookies</span>
+  <span class="chapter-card locked">Desserts</span>
+  <span class="chapter-card locked">Eggs</span>
+  <span class="chapter-card locked">Fish &amp; Seafood</span>
+  <span class="chapter-card locked">Freezing &amp; Canning</span>
+  <span class="chapter-card locked">Meats</span>
+  <span class="chapter-card locked">Pies</span>
+  <span class="chapter-card locked">Poultry</span>
+  <span class="chapter-card locked">Salads</span>
+  <span class="chapter-card locked">Sandwiches</span>
+  <span class="chapter-card locked">Sauces</span>
+  <span class="chapter-card locked">Soups</span>
+  <span class="chapter-card locked">Spices</span>
+  <span class="chapter-card locked">Vegetables</span>
+  <span class="chapter-card locked">Chinese &amp; Korean</span>
+  <span class="chapter-card locked">Italian</span>
+  <span class="chapter-card locked">Mexican</span>
+  <a href="#syrian-lebanese" class="chapter-card active">Syrian-Lebanese<span class="ch-count">4 recipes</span></a>
+  <span class="chapter-card locked">Menus</span>
+  <span class="chapter-card locked">Kitchen Hints &amp; Notes</span>
+  <span class="chapter-card locked">Holiday Checklists</span>
+  <span class="chapter-card locked">Entertaining</span>
+  <span class="chapter-card locked">Restaurant Recipes</span>
+</div>
+
+<div class="section-label" id="syrian-lebanese" style="scroll-margin-top:70px;">
+  <span>Chapter</span>
+  Syrian-Lebanese
 </div>
 
 <main>
